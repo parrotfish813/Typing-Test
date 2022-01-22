@@ -12,7 +12,7 @@ def start_screen(stdscr):
 
 def display_text(stdscr, target, current, wpm=0):
     stdscr.addstr(target)
-    stdscr.addstr(1, 0, f"WPM: {wpm}")
+    stdscr.addstr(3, 0, f"WPM: {wpm}")
 
     for i, char in enumerate(current):
         correct_char = target[i]
@@ -71,6 +71,7 @@ def main(stdscr):
     curses.init_pair(4, curses.COLOR_CYAN, curses.COLOR_BLACK)
 
     start_screen(stdscr)
+
     while True:
         wpm_test(stdscr)
         stdscr.addstr(2, 0, "You completed the text! Press any key to continue...")
